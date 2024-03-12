@@ -9,7 +9,9 @@ In administrative task, we often meet the situation of sending multiple emails w
 
 <img src="https://github.com/jiayin04/DummyProject/assets/154343987/2e98b9d5-783e-404e-9b20-dcba6d280d20">
 
-> Place all the necessary attributes in the excel sheet if you are creating google sheet
+
+- Place all the necessary attributes in the excel sheet if you are creating google sheet
+
 > Sample of Google Sheet Template:
 
 ![image](https://github.com/jiayin04/DummyProject/assets/154343987/c72263d3-fd5c-4ba5-96ff-b45b49d67ff0)
