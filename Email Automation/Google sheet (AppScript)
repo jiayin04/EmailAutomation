@@ -1,0 +1,118 @@
+var ss_id = "13GiYvizQhhLUvpXtFdJlql6BFUz7HdyZhf1FJFDXD2A";//Sheet ID
+var sheetName = "Automate Email"; // sheet name
+var startRow = 2; //First row after your header.
+
+
+//Email data
+var subject = "Welcome to Our Club + Join Our Discord Server"; //The email subject
+
+
+/******************************************************************************************
+ * The main run function. It loops thorugh each user and calls the following functions:
+ *   - sendEmail()
+ *   - openCompleteWindow()
+ */
+function main() {
+  var ss = SpreadsheetApp.openById(ss_id);
+  var sheet = ss.getSheetByName(sheetName);
+
+  var lastRow = sheet.getLastRow();
+  var lastCol = sheet.getLastColumn();
+
+  var range = sheet.getRange(startRow, 1, lastRow - startRow + 1, lastCol);
+  var rangeVals = range.getValues();
+
+  var badEmailList = [];
+  // var update = [];
+
+  //Loop through range values.
+  for (var row = 0; row < rangeVals.length; row++) {
+
+    if (!rangeVals[row][14]) {
+      var badEmail = sendEmail(rangeVals[row], ss.getUrl);
+
+      var date = new Date();
+      var updatedDate = Utilities.formatDate(date, "GMT+08", "yyyy-MM-dd HH:mm:ss");
+      rangeVals[row][15] = updatedDate; //UPDATE THE SEND TIME(O)
+      sheet.getRange(row + startRow, 15).setValue(updatedDate);
+
+      if (badEmail) {
+        badEmailList.push(badEmail);
+        sheet.getRange(row + startRow, 16).setValue("Email Not Send!");
+
+      }
+      else {
+
+        // Add checkboxes for the newly submitted rows
+        sheet.getRange(row + startRow, 14).insertCheckboxes().setValue(true);
+        sheet.getRange(row + startRow, 16).setValue("-");
+      };
+    }
+    else {
+      continue;
+    };
+
+
+  };
+};
+
+
+/******************************************************************************************
+ * Google trigger function. When the sheet is opened, a custom menu is produced.
+ * 
+ */
+
+function onOpen() {
+
+
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu("Send Membership Email")
+    .addItem("Send Email Now", "main") //main is to link back to the main function
+    .addToUi();
+
+
+};
+
+
+/******************************************************************************************
+ * Sends HTML email to user who has not completed task. 
+ * The HTML template is created from the email.html file. 
+ *
+ * @param {array} membership - 2d array of overdue members with full row data.
+ * @param {string} sheetURL - url of current Spreadsheet.
+ *
+ * @return {array} - Returns array of email addresses that could not be attemplted due to errors.
+ */
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+function sendEmail(membership, sheetURL) {
+
+  //Members Details
+  var members = {
+    "name": membership[1],
+    "email": membership[6],
+  };
+
+  if (!isValidEmail(members.email)) {
+    return members.email;
+  }
+
+  var body = HtmlService.createTemplateFromFile("email");
+  body.name = members.name;
+
+  try {
+    MailApp.sendEmail({
+      to: members.email,
+      subject: subject,
+      htmlBody: body.evaluate().getContent(),
+    });
+  }
+  catch (error) {
+    console.log(error);
+  }
+};
+
