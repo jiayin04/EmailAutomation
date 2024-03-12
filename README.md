@@ -11,14 +11,17 @@ In administrative task, we often meet the situation of sending multiple emails w
 
 > Place all the necessary attributes in the excel sheet if you are creating google sheet
 > Sample of Google Sheet Template:
+
 ![image](https://github.com/jiayin04/DummyProject/assets/154343987/c72263d3-fd5c-4ba5-96ff-b45b49d67ff0)
 
 
 **b) Step 2: Go to Extension and Open App Script**
+
 ![image](https://github.com/jiayin04/DummyProject/assets/154343987/1e95bdc5-9a33-47f1-90bf-8ceceb915165)
 
 > In app script, we will start to code out our desired function as we can see over the menu
 > Customized menu:
+
 ```function onOpen() {
 
 
@@ -35,6 +38,7 @@ In administrative task, we often meet the situation of sending multiple emails w
 - In email automation, we have few important functions, like email sending function, email validation function, menu customization function and main function which execute the entire script.
 
 > Variable Declaration:
+
 ```var ss_id = "13GiYvizQhhLUvpXtFdJlql6BFUz7HdyZhf1FJFDXD2A";//Sheet ID
 var sheetName = "Automate Email"; // sheet name
 var startRow = 2; //First row after your header.
@@ -45,6 +49,7 @@ var subject = "Welcome to Our Club + Join Our Discord Server"; //The email subje
 ```
 
 > Send Email Function:
+
 ```function sendEmail(membership, sheetURL) {
 
   //Members Details
@@ -73,7 +78,9 @@ var subject = "Welcome to Our Club + Join Our Discord Server"; //The email subje
 };
 ```
 * For avoiding email sending error, we may add function to check the validity of the email in case the email is not accurate or invalid.
+  
   > Email Validation:
+  
   ```function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -81,6 +88,7 @@ var subject = "Welcome to Our Club + Join Our Discord Server"; //The email subje
   ```
 
 > Main function (Calling sendEmail function):
+
 ```function main() {
   var ss = SpreadsheetApp.openById(ss_id);
   var sheet = ss.getSheetByName(sheetName);
@@ -186,3 +194,12 @@ var subject = "Welcome to Our Club + Join Our Discord Server"; //The email subje
 
 **Step 5: Automate the Email with App Script**
 > Go to 'Trigger'
+
+![image](https://github.com/jiayin04/DummyProject/assets/154343987/41f71929-1ba2-4dd4-a190-03558a6e4a41) 
+
+> Make changes based on your need (Time Driven, Spreadsheet, or Calendar)
+
+![image](https://github.com/jiayin04/DummyProject/assets/154343987/58121897-8ede-48b7-9705-55e521f6fd78)
+
+DONE!!!!! We made it ^_^
+
