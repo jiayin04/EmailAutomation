@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_top">
+
+<style>
+    .header{
+        background-color:rgb(246, 210, 215); 
+        color:black; 
+        height: 50px; 
+        width: auto;
+        text-align:center;
+        padding-top: 20px;
+    }
+
+</style>
+</head>
+
+<body>
+  <div style="margin:3%; border:2px solid rgb(162, 159, 159);">
+    <div style="margin:3%;">
+      <h2 class="header">
+        OSC Membership Confirmation
+      </h2>
+    </div>
+
+    <div style="margin:3%; text-align: justify;">
+      <p>Hello
+        <?= name ?>,
+      </p>
+
+      <p>
+        Warm greetings from Operation Smile Club! We are glad to receive your registration of our club's membership.
+        With that being said, welcome aboard to OSC! <br> <br>
+
+        The link below is the link to join our Discord server to join our weekly sessions and interactive activities: <br><br>
+        <a href="https://discord.gg/84UJXN45nV"> Discord Server Link </a> <br> <br>
+
+        For any further enquiries or more information, feel free to contact us by replying to this email or through our
+        Instagram account @operationsmileclub.apu!
+        Thank you and have a nice day! <br> <br>
+      </p>
+
+      <p>
+        Best regards, <br>
+        Operation Smile Club (OSC)
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
