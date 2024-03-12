@@ -7,7 +7,7 @@ In administrative task, we often meet the situation of sending multiple emails w
 
 **a) Step 1: Create a Google Sheet/ Submit Form(Link to Google Sheet)**
 
-<img src="https://github.com/jiayin04/DummyProject/assets/154343987/2e98b9d5-783e-404e-9b20-dcba6d280d20" width="800px" height="200px" style="justify-content: center;">
+<img src="https://github.com/jiayin04/DummyProject/assets/154343987/2e98b9d5-783e-404e-9b20-dcba6d280d20">
 
 > Place all the necessary attributes in the excel sheet if you are creating google sheet
 > Sample of Google Sheet Template:
