@@ -7,7 +7,7 @@ In administrative task, we often meet the situation of sending multiple emails w
 
 **a) Step 1: Create a Google Sheet/ Submit Form(Link to Google Sheet)**
 
-![image](https://github.com/jiayin04/DummyProject/assets/154343987/2e98b9d5-783e-404e-9b20-dcba6d280d20)
+![image](https://github.com/jiayin04/DummyProject/assets/154343987/2e98b9d5-783e-404e-9b20-dcba6d280d20 =250x250)
 
 > Place all the necessary attributes in the excel sheet if you are creating google sheet
 > Sample of Google Sheet Template:
@@ -193,13 +193,13 @@ var subject = "Welcome to Our Club + Join Our Discord Server"; //The email subje
 ```
 
 **Step 5: Automate the Email with App Script**
-> Go to 'Trigger'
+- Go to 'Trigger'
 
 ![image](https://github.com/jiayin04/DummyProject/assets/154343987/41f71929-1ba2-4dd4-a190-03558a6e4a41) 
 
-> Make changes based on your need (Time Driven, Spreadsheet, or Calendar)
+- Make changes based on your need (Time Driven, Spreadsheet, or Calendar)
 
 ![image](https://github.com/jiayin04/DummyProject/assets/154343987/58121897-8ede-48b7-9705-55e521f6fd78)
 
-DONE!!!!! We made it ^_^
+~ DONE!!!!! We made it ^_^
 
