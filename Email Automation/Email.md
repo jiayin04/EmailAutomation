@@ -156,7 +156,7 @@ var subject = "Welcome to Our Club + Join Our Discord Server"; //The email subje
   <div style="margin:3%; border:2px solid rgb(162, 159, 159);">
     <div style="margin:3%;">
       <h2 class="header">
-        OSC Membership Confirmation
+        Club Membership Confirmation
       </h2>
     </div>
 
@@ -166,7 +166,7 @@ var subject = "Welcome to Our Club + Join Our Discord Server"; //The email subje
       </p>
 
       <p>
-        Warm greetings from XXX Club! We are glad to receive your registration of our club's membership.
+        Warm greetings! We are glad to receive your registration of our club's membership.
         With that being said, welcome aboard to XXX! <br> <br>
 
         The link below is the link to join our Discord server to join our weekly sessions and interactive activities: <br><br>
